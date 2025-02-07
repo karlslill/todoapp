@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  backend:
+    build:
+      context: "E:\\Proge stuff\\icd0024-23-24-s\\ToDoApp\\WebApp"
+      dockerfile: "Dockerfile"
+      target: "build"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/WebApp.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "webapp:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\Karl\\.nuget\\packages:/root/.nuget/packages"
+    - "E:\\Proge stuff\\icd0024-23-24-s\\ToDoApp\\WebApp:/app:rw"
+    - "E:\\Proge stuff\\icd0024-23-24-s\\ToDoApp:/src:rw"
+    working_dir: "/app"

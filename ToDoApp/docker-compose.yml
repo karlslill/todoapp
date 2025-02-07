@@ -1,0 +1,22 @@
+﻿services:
+  frontend:
+    build:
+      context: ../ToDoAppFront/todo-app-front
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ../ToDoApp/WebApp
+    ports:
+      - "5138:5138" 
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./ToDoApp/todos.db:/app/todos.db 
+
+volumes:
+  todos_db_data:
+    driver: local
